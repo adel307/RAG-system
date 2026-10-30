@@ -1,9 +1,9 @@
 import ollama from 'ollama';
-import { EMBEDDING_MODEL_ENV } from '../config/env.js';
+import { OLLAMA_MODEL_ENV } from '../config/env';
 
 export async function generateEmbedding(text: string): Promise<number[] | null> {
   const response = await ollama.embeddings({
-    model: EMBEDDING_MODEL_ENV,
+    model: OLLAMA_MODEL_ENV,
     prompt: text,
   });
 

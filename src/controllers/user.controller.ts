@@ -1,9 +1,9 @@
-import type { Request, Response } from 'express';
+import { Request, Response } from 'express';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import User from '../models/User.js';
-import {type UserInterface } from '../types/models.js';
-import { JWT_SECRET_ENV, NODE_ENV } from '../config/env.js';
+import User from '../models/User';
+import { UserInterface } from '../types/models';
+import { JWT_SECRET_ENV, NODE_ENV } from '../config/env';
 
 /**
  * 1. جلب جميع المستخدمين (Read - All)

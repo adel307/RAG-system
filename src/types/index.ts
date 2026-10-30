@@ -16,13 +16,13 @@ export interface PdfPayload {
 }
 
 export interface Item {
-  id: number;
+  id: string;
   text: string;
   payload: ItemPayload;
 }
 
 export interface Point {
-  id: number|string;
+  id: string ;
   vector: number[] | Record<string, number[]>;
   payload?: Record<string, any>;
 }

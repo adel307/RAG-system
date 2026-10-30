@@ -1,5 +1,5 @@
-import { Schema, models, model, Model} from 'mongoose';
-import {type UserInterface } from '../types/models.js';
+import { Schema, models, model } from 'mongoose';
+import { UserInterface } from '../types/models';
 
 const UserSchema = new Schema<UserInterface>({
   name: { type: String, required: true },
@@ -11,6 +11,6 @@ const UserSchema = new Schema<UserInterface>({
 });
 
 // التحقق مما إذا كان النموذج مُعرّفاً مسبقاً لتجنب أخطاء إعادة التعريف في Hot Reload
-const User = (models.User as Model<UserInterface>)|| model<UserInterface>('User', UserSchema);
+const User = models.User || model<UserInterface>('User', UserSchema);
 
 export default User;

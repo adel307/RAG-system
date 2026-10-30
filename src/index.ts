@@ -1,7 +1,7 @@
-import 'dotenv/config';
-import connectDB from "./lib/mongodb.js";
-import app from './app.js';
-import { PORT_ENV } from "./config/env.js";
+import "dotenv/config";
+import app from "./app";
+import connectDB from "./lib/mongodb";
+import { PORT_ENV } from "./config/env";
 
 const port = Number(PORT_ENV ?? 3000);
 

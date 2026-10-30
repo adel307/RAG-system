@@ -29,8 +29,8 @@ export interface LogInterface extends Document {
     body?: Record<string, any>;
     responseTime: number;
     status: number;
-    errorMessage?: string | undefined;
-    userAgent?: string | undefined;
+    errorMessage?: string;
+    userAgent?: string;
     timestamp: Date;
 }
 

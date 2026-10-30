@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { MONGODB_URI_ENV } from '../config/env.js';
+import { MONGODB_URI_ENV } from '../config/env';
 
 const MONGODB_URI = MONGODB_URI_ENV;
 

@@ -1,16 +1,15 @@
 import { QdrantClient } from '@qdrant/js-client-rest';
-import { COLLECTION_NAME_ENV } from '../config/env.js';
-import type { Point } from '../types/types/index.js';
+import { COLLECTION_NAME_ENV, QDRANT_API_KEY_ENV, QDRANT_URL_ENV } from '../config/env.js';
+import { Point } from '../types/index.js';
 
-if (!process.env.QDRANT_URL || !process.env.QDRANT_API_KEY) {
+if (!QDRANT_URL_ENV || !QDRANT_API_KEY_ENV) {
   throw new Error('Please set QDRANT_URL and QDRANT_API_KEY environment variables.');
 }
 
 export const qdrantClient = new QdrantClient({
-  url: process.env.QDRANT_URL,
-  apiKey: process.env.QDRANT_API_KEY,
+  url: QDRANT_URL_ENV,
+  apiKey: QDRANT_API_KEY_ENV,
 });
-
 
 export async function ensureCollectionExists(): Promise<void> {
   const collections = await qdrantClient.getCollections();
@@ -32,6 +31,6 @@ export async function ensureCollectionExists(): Promise<void> {
 export async function upsertPoints(points: Point[]): Promise<any> {
   return await qdrantClient.upsert(COLLECTION_NAME_ENV, {
     wait: true,
-    points: points,
+    points
   });
 }

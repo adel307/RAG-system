@@ -7,10 +7,10 @@ import {
   deleteUser,
   Adminlogin,
   logout
-} from '../controllers/user.controller.js';
-import { createUserSchema, updateUserSchema, userIdSchema } from '../validators/user.validator.js';
-import { validate } from '../Middleware/validate.middleware.js';
-import { protect, restrictTo } from '../Middleware/auth.js';
+} from '../controllers/user.controller';
+import { createUserSchema, updateUserSchema, userIdSchema } from '../validators/user.validator';
+import { validate } from '../Middleware/validate.middleware';
+import { protect, restrictTo } from '../Middleware/auth';
 
 const router = Router();
 

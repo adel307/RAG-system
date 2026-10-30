@@ -1,5 +1,5 @@
 import { Schema, model } from 'mongoose';
-import type { LogInterface } from '../types/models.js';
+import { LogInterface } from '../types/models';
 
 const logSchema = new Schema<LogInterface>({
     ip: { type: String, required: true },

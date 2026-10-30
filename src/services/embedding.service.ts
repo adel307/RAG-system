@@ -1,8 +1,8 @@
-import { EMBEDDING_MODEL_ENV, OLLAMA_URL_ENV  } from "../config/env.js";
+import { OLLAMA_MODEL_ENV, OLLAMA_URL_ENV  } from "../config/env";
 
 const ollamaUrl =
   OLLAMA_URL_ENV ?? "http://localhost:11434/api/embeddings";
-const ollamaModel = EMBEDDING_MODEL_ENV ?? "nomic-embed-text";
+const ollamaModel = OLLAMA_MODEL_ENV ?? "nomic-embed-text";
 
 interface OllamaEmbeddingResponse {
   embedding?: unknown;

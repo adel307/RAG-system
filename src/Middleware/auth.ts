@@ -1,6 +1,6 @@
-import type { Request, Response, NextFunction } from 'express';
+import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
-import { JWT_SECRET_ENV, NODE_ENV } from '../config/env.js';
+import { JWT_SECRET_ENV, NODE_ENV } from '../config/env';
 
 const JWT_SECRET = JWT_SECRET_ENV;
 

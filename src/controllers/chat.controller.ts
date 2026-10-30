@@ -1,5 +1,4 @@
 import { type Request, type Response } from 'express';
-import { setupAndUpload } from '../scripts/upload.js';
 
 const GEMINI_MODEL:string = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
 
@@ -53,8 +52,6 @@ export async function createChatResponse(req:Request<{}, {}, ChatRequestBody>, r
         signal: AbortSignal.timeout(30_000),
       },
     );
-
-    setupAndUpload();
 
     if (!response.ok) {
       console.error(`Gemini request failed with status ${response.status}.`);
